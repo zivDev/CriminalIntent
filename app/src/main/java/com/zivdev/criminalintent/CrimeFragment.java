@@ -3,6 +3,7 @@ package com.zivdev.criminalintent;
 
 import android.app.Activity;
 import android.content.ClipData;
+<<<<<<< HEAD
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -14,6 +15,14 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.ContactsContract;
+=======
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.graphics.drawable.BitmapDrawable;
+import android.hardware.Camera;
+import android.os.Build;
+import android.os.Bundle;
+>>>>>>> f28275eca12580a0e1164e1003d57871ddc544ab
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -21,7 +30,10 @@ import android.support.v4.app.NavUtils;
 import android.support.v4.view.ViewPager;
 import android.text.Editable;
 import android.text.TextWatcher;
+<<<<<<< HEAD
 import android.text.format.DateFormat;
+=======
+>>>>>>> f28275eca12580a0e1164e1003d57871ddc544ab
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
@@ -40,23 +52,31 @@ import java.util.UUID;
 /**
  * Created by ziv on 16.6.21.
  */
+<<<<<<< HEAD
 public class CrimeFragment extends Fragment {
 
 
 
+=======
+public class CrimeFragment extends Fragment{
+>>>>>>> f28275eca12580a0e1164e1003d57871ddc544ab
     private static final String TAG = "CrimeFragment";
     public static final String EXTRA_CRIME_ID = "com.zivdev.criminalintent.crime_id";
     private static final  String DIALOG_DATE = "date";
     private static final int REQUEST_DATE = 0;
     private static final int REQUEST_PHOTO = 1;
+<<<<<<< HEAD
     private static final int REQUEST_CONTACT = 2;
 
+=======
+>>>>>>> f28275eca12580a0e1164e1003d57871ddc544ab
     private static final String DIALOG_IMAGE = "image";
 
     private Crime mCrime;
     private EditText mTitleField;
     private Button mDateButton;
     private CheckBox mSolvedCheckBox;
+<<<<<<< HEAD
 
     private ImageButton mPhotoButton;
     private Button mSuspectButton;
@@ -93,20 +113,37 @@ public class CrimeFragment extends Fragment {
     }
 
 
+=======
+    private ImageButton mPhotoButton;
+    private ImageView mPhotoView;
+
+>>>>>>> f28275eca12580a0e1164e1003d57871ddc544ab
 
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+<<<<<<< HEAD
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(true);
         //方法一：
         //因为这个方法总需要由某个具体activity托管，造成无法复用CrimeFragemnt
+=======
+        Log.i("onCreate", "-----------------");
+        super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
+        /*
+        *方法一：
+        *因为这个方法总需要由某个具体activity托管，造成无法复用CrimeFragemnt
+        *
+         */
+>>>>>>> f28275eca12580a0e1164e1003d57871ddc544ab
 //        UUID crimeid = (UUID)getActivity().getIntent().getSerializableExtra(EXTRA_CRIME_ID);
 //        mCrime = CrimeLab.get(getActivity()).getCrime(crimeid);
 
         //方法二：
         UUID crimeId = (UUID)getArguments().getSerializable(EXTRA_CRIME_ID);
         mCrime = CrimeLab.get(getActivity()).getCrime(crimeId);
+<<<<<<< HEAD
     }
 
     @Override
@@ -119,6 +156,9 @@ public class CrimeFragment extends Fragment {
     public void onDetach() {
         super.onDetach();
         mCallbacks = null;
+=======
+
+>>>>>>> f28275eca12580a0e1164e1003d57871ddc544ab
     }
 
     @Override
@@ -183,7 +223,10 @@ public class CrimeFragment extends Fragment {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 mCrime.setSolved(isChecked);
+<<<<<<< HEAD
                 mCallbacks.onCrimeUpdated(mCrime);
+=======
+>>>>>>> f28275eca12580a0e1164e1003d57871ddc544ab
             }
         });
 
@@ -198,8 +241,11 @@ public class CrimeFragment extends Fragment {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 mCrime.setTitle(s.toString());
+<<<<<<< HEAD
                 mCallbacks.onCrimeUpdated(mCrime);
                 getActivity().setTitle(mCrime.getTitle());
+=======
+>>>>>>> f28275eca12580a0e1164e1003d57871ddc544ab
             }
 
             @Override
@@ -240,6 +286,7 @@ public class CrimeFragment extends Fragment {
         if (!hasACamera){
             mPhotoButton.setEnabled(false);
         }
+<<<<<<< HEAD
 
         Button reportButton = (Button)v.findViewById(R.id.crime_repport_button);
         reportButton.setOnClickListener(new View.OnClickListener() {
@@ -266,6 +313,8 @@ public class CrimeFragment extends Fragment {
         if (mCrime.getSuspect()!=null){
             mSuspectButton.setText(mCrime.getSuspect());
         }
+=======
+>>>>>>> f28275eca12580a0e1164e1003d57871ddc544ab
         return v;
     }
 
@@ -299,7 +348,10 @@ public class CrimeFragment extends Fragment {
 
             Date date = (Date) data.getSerializableExtra(DatePickerFragment.EXTRA_DATE);
             mCrime.setDate(date);
+<<<<<<< HEAD
             mCallbacks.onCrimeUpdated(mCrime);
+=======
+>>>>>>> f28275eca12580a0e1164e1003d57871ddc544ab
             updateDate();
 //            Log.i("OAR", "-----------------" + mCrime.getDate().toString());
         }else if (requestCode ==REQUEST_PHOTO){
@@ -308,6 +360,7 @@ public class CrimeFragment extends Fragment {
                 Log.i(TAG,"filename: "+filename);
                 Photo p = new Photo(filename);
                 mCrime.setPhoto(p);
+<<<<<<< HEAD
                 mCallbacks.onCrimeUpdated(mCrime);
                 showPhoto();
 
@@ -335,6 +388,14 @@ public class CrimeFragment extends Fragment {
 
 
 
+=======
+                showPhoto();
+
+            }
+        }
+    }
+
+>>>>>>> f28275eca12580a0e1164e1003d57871ddc544ab
     public void updateDate(){
         mDateButton.setText(mCrime.getDate().toString());
     }

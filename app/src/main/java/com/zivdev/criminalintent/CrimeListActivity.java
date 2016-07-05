@@ -2,8 +2,11 @@ package com.zivdev.criminalintent;
 
 import android.content.Intent;
 import android.support.v4.app.Fragment;
+<<<<<<< HEAD
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+=======
+>>>>>>> f28275eca12580a0e1164e1003d57871ddc544ab
 import android.view.View;
 import android.widget.ListView;
 
@@ -17,6 +20,7 @@ public class CrimeListActivity extends SingleFragmentActivity {
         return new CrimeListFragment();
     }
 
+<<<<<<< HEAD
     @Override
     public void onCrimeSelected(Crime crime) {
         if (findViewById(R.id.detailFragmentContainer)==null){
@@ -38,4 +42,9 @@ public class CrimeListActivity extends SingleFragmentActivity {
             ft.commit();
         }
     }
+=======
+
+
+
+>>>>>>> f28275eca12580a0e1164e1003d57871ddc544ab
 }

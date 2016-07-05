@@ -13,6 +13,7 @@
     <string name="subtitle">If you see somthing, say something</string>
     <string name="delete_crime">Delete</string>
     <string name="take">Take!</string>
+<<<<<<< HEAD
     <string name="crime_suspect_text">Choose Suspect</string>
     <string name="crime_report_text">Send Crime Report</string>
 
@@ -25,6 +26,12 @@
     <string name="crime_report_suspect">The suspect is %s.</string>
     <string name="crime_report_subject">CriminalIntent Crime Report</string>
     <string name="send_report">Send crime report via</string>
+=======
+
+
+
+
+>>>>>>> f28275eca12580a0e1164e1003d57871ddc544ab
 
 
 </resources>

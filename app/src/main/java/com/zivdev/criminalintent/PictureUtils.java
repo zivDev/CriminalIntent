@@ -25,7 +25,11 @@ public class PictureUtils {
 
         int inSampleSize = 1;
         if (srcHeigh>destHeigh||srcWidth>destWidth){
+<<<<<<< HEAD
             if (srcWidth>srcWidth){
+=======
+            if (srcWidth>srcHeigh){
+>>>>>>> f28275eca12580a0e1164e1003d57871ddc544ab
                 inSampleSize = Math.round(srcHeigh/destHeigh);
             }else {
                 inSampleSize = Math.round(srcWidth/destWidth);

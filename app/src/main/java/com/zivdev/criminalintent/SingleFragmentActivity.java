@@ -11,6 +11,7 @@ import android.view.Window;
 /**
  * Created by ziv on 16.6.22.
  */
+<<<<<<< HEAD
 public abstract class SingleFragmentActivity extends FragmentActivity
         implements CrimeListFragment.Callbacks, CrimeFragment.Callbacks {
     protected abstract Fragment createFragment();
@@ -23,6 +24,17 @@ public abstract class SingleFragmentActivity extends FragmentActivity
         super.onCreate(savedInstanceState);
 //        setContentView(R.layout.activity_fragment);
         setContentView(getLayoutResId());
+=======
+public abstract class SingleFragmentActivity extends FragmentActivity{
+    protected abstract Fragment createFragment();
+
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+
+        setContentView(R.layout.activity_fragment);
+>>>>>>> f28275eca12580a0e1164e1003d57871ddc544ab
         FragmentManager fm = getSupportFragmentManager();
         Fragment fragment = fm.findFragmentById(R.id.fragmentContainer);
         if (fragment ==null){
@@ -33,6 +45,7 @@ public abstract class SingleFragmentActivity extends FragmentActivity
         }
     }
 
+<<<<<<< HEAD
     @Override
     public void onCrimeSelected(Crime crime) {
 
@@ -44,4 +57,7 @@ public abstract class SingleFragmentActivity extends FragmentActivity
         CrimeListFragment listFragment = (CrimeListFragment)fm.findFragmentById(R.id.fragmentContainer);
         listFragment.updateUI();
     }
+=======
+
+>>>>>>> f28275eca12580a0e1164e1003d57871ddc544ab
 }

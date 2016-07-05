@@ -30,9 +30,14 @@
         <activity android:name=".CrimeCamerActivity"
             android:screenOrientation="landscape"
             android:label="@string/app_name">
+<<<<<<< HEAD
         </activity>
 
 
+=======
+
+        </activity>
+>>>>>>> f28275eca12580a0e1164e1003d57871ddc544ab
     </application>
 
 </manifest>
