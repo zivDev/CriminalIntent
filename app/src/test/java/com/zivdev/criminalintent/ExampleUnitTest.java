@@ -1,6 +1,13 @@
 package com.zivdev.criminalintent;
 
+import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.util.Log;
+
 import org.junit.Test;
+
+import java.util.List;
 
 import static org.junit.Assert.*;
 
