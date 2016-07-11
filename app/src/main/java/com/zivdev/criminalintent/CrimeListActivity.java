@@ -20,7 +20,7 @@ public class CrimeListActivity extends SingleFragmentActivity {
         return new CrimeListFragment();
     }
 
-<<<<<<< HEAD
+
     @Override
     public void onCrimeSelected(Crime crime) {
         if (findViewById(R.id.detailFragmentContainer)==null){
@@ -42,9 +42,5 @@ public class CrimeListActivity extends SingleFragmentActivity {
             ft.commit();
         }
     }
-=======
 
-
-
->>>>>>> f28275eca12580a0e1164e1003d57871ddc544ab
 }

@@ -1,11 +1,8 @@
 package com.zivdev.criminalintent;
 
 import android.annotation.TargetApi;
-<<<<<<< HEAD
-import android.app.Activity;
 import android.content.Context;
-=======
->>>>>>> f28275eca12580a0e1164e1003d57871ddc544ab
+
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -21,10 +18,6 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-<<<<<<< HEAD
-import android.view.Window;
-=======
->>>>>>> f28275eca12580a0e1164e1003d57871ddc544ab
 import android.widget.AbsListView;
 import android.widget.Adapter;
 import android.widget.AdapterView;
@@ -42,7 +35,7 @@ public class CrimeListFragment extends ListFragment {
     private static final int REQUEST_CRIME = 1;
     private ArrayList<Crime> mCrimes;
     private boolean mSubtitleVisible;
-<<<<<<< HEAD
+
     private Callbacks mCallbacks;
 
     public interface Callbacks{
@@ -66,8 +59,6 @@ public class CrimeListFragment extends ListFragment {
         super.onDetach();
         mCallbacks = null;
     }
-=======
->>>>>>> f28275eca12580a0e1164e1003d57871ddc544ab
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -164,17 +155,12 @@ public class CrimeListFragment extends ListFragment {
         Crime c = ((CrimeAdapter)getListAdapter()).getItem(position);
         Log.d("CrimeLishFragment",c.getTitle()+"was clicked");
 
-<<<<<<< HEAD
 //        Intent i = new Intent(getActivity(),CrimePagerActivity.class);
 //        i.putExtra(CrimeFragment.EXTRA_CRIME_ID, c.getId());
 //        startActivityForResult(i,REQUEST_CRIME);
 
         mCallbacks.onCrimeSelected(c);
-=======
-        Intent i = new Intent(getActivity(),CrimePagerActivity.class);
-        i.putExtra(CrimeFragment.EXTRA_CRIME_ID, c.getId());
-        startActivityForResult(i,REQUEST_CRIME);
->>>>>>> f28275eca12580a0e1164e1003d57871ddc544ab
+
     }
 
 
@@ -197,7 +183,7 @@ public class CrimeListFragment extends ListFragment {
             case R.id.menu_item_new_crime:
                 Crime crime = new Crime();
                 CrimeLab.get(getActivity()).addCrime(crime);
-<<<<<<< HEAD
+
 //                Intent i = new Intent(getActivity(),CrimePagerActivity.class);
 //                i.putExtra(CrimeFragment.EXTRA_CRIME_ID,crime.getId());
 //                startActivityForResult(i,0);
@@ -205,12 +191,6 @@ public class CrimeListFragment extends ListFragment {
 
                 ((CrimeAdapter)getListAdapter()).notifyDataSetChanged();
                 mCallbacks.onCrimeSelected(crime);
-=======
-                Intent i = new Intent(getActivity(),CrimePagerActivity.class);
-                i.putExtra(CrimeFragment.EXTRA_CRIME_ID,crime.getId());
-                startActivityForResult(i,0);
-                Log.i("-------------","menu_item_new_crime");
->>>>>>> f28275eca12580a0e1164e1003d57871ddc544ab
                 return true;
 
             case R.id.menu_item_shou_subtitle:
@@ -285,11 +265,7 @@ public class CrimeListFragment extends ListFragment {
             return convertView;
         }
     }
-<<<<<<< HEAD
-
     public void updateUI(){
         ((CrimeAdapter)getListAdapter()).notifyDataSetChanged();
     }
-=======
->>>>>>> f28275eca12580a0e1164e1003d57871ddc544ab
 }
